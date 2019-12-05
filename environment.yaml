@@ -1,4 +1,4 @@
-name: timeflux
+name: timeflux-turorials
 channels:
   - defaults
   - conda-forge
@@ -25,10 +25,10 @@ dependencies:
   # Extra pip dependencies
   - pip
   - pip:
-      - mne
-      - git+https://github.com/alexandrebarachant/pyRiemann@82d2ac5#egg=pyRiemann
-      - git+https://github.com/timeflux/timeflux@3cc44d3#egg=timeflux
-      - git+https://github.com/timeflux/timeflux_ui@a940d37#egg=timeflux_ui
-      - git+https://github.com/timeflux/timeflux_dsp  #@9e39cda#egg=timeflux_dsp
-      - git+https://github.com/timeflux/timeflux_ml@ea38c03#egg=timeflux_ml
-      - git+https://github.com/timeflux/timeflux_example # or eventually, clone this repository and install it in devel mode: 'pip install -e . '
+    - mne
+    - git+https://github.com/alexandrebarachant/pyRiemann@82d2ac5#egg=pyRiemann
+    - git+https://github.com/timeflux/timeflux#egg=timeflux
+    - git+https://github.com/timeflux/timeflux_ui#egg=timeflux_ui
+    - git+https://github.com/timeflux/timeflux_dsp  #@9e39cda#egg=timeflux_dsp
+    - git+https://github.com/timeflux/timeflux_ml#egg=timeflux_ml
+    - git+https://github.com/timeflux/timeflux_example # or eventually, clone this repository and install it in devel mode: 'pip install -e . '

@@ -16349,7 +16349,7 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Exercise-1---meta-nodes-and-offline-pipelines">Exercise 1 - meta-nodes and offline pipelines<a class="anchor-link" href="#Exercise-1---meta-nodes-and-offline-pipelines">&#182;</a></h1><p>For your first iteration, here is what you will build:
-<img src="hello_world.png" alt='hello_world'></p>
+<img src="img/hello_world.png" alt='hello_world'></p>
 
 </div>
 </div>
@@ -16367,10 +16367,10 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">timeflux.helpers.testing</span> <span class="k">import</span> <span class="n">Looper</span><span class="p">,</span> <span class="n">ReadData</span>
-<span class="kn">from</span> <span class="nn">timeflux.core.branch</span> <span class="k">import</span> <span class="n">Branch</span>
-<span class="kn">from</span> <span class="nn">utils.tutorial_utils</span> <span class="k">import</span> <span class="n">load_standalone_graph</span>
-<span class="kn">from</span> <span class="nn">utils.idisplay</span> <span class="k">import</span> <span class="n">pygments_css</span><span class="p">,</span> <span class="n">display_yaml</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">timeflux.helpers.testing</span> <span class="kn">import</span> <span class="n">Looper</span><span class="p">,</span> <span class="n">ReadData</span>
+<span class="kn">from</span> <span class="nn">timeflux.core.branch</span> <span class="kn">import</span> <span class="n">Branch</span>
+<span class="kn">from</span> <span class="nn">utils.tutorial_utils</span> <span class="kn">import</span> <span class="n">load_standalone_graph</span>
+<span class="kn">from</span> <span class="nn">utils.idisplay</span> <span class="kn">import</span> <span class="n">pygments_css</span><span class="p">,</span> <span class="n">display_yaml</span>
 
 <span class="kn">import</span> <span class="nn">logging</span>
 <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">()</span>
@@ -16492,69 +16492,77 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span class="ansi-blue-fg">2019-12-05 15:07:38,071</span> <span class="ansi-black-intense-fg">INFO      </span> timeflux     22746    <span class="ansi-green-fg">MainProcess     </span> <span class="ansi-cyan-fg">Timeflux 0.3.3+121.g2fdae47.dirty</span>
-<span class="ansi-blue-fg">2019-12-05 15:07:38,082</span> <span class="ansi-black-intense-fg">DEBUG     </span> manager      22746    <span class="ansi-green-fg">MainProcess     </span> <span class="ansi-white-fg">Worker spawned with PID 22753</span>
-<span class="ansi-blue-fg">2019-12-05 15:07:38,438</span> <span class="ansi-black-intense-fg">DEBUG     </span> debug        22753    <span class="ansi-green-fg">Process-1       </span> <span class="ansi-white-fg">
+<pre><span class="ansi-blue-fg">2019-12-05 20:45:19,858</span> <span class="ansi-black-intense-fg">INFO      </span> timeflux     29309    <span class="ansi-green-fg">MainProcess     </span> <span class="ansi-cyan-fg">Timeflux 0+unknown</span>
+<span class="ansi-blue-fg">2019-12-05 20:45:19,866</span> <span class="ansi-black-intense-fg">DEBUG     </span> manager      29309    <span class="ansi-green-fg">MainProcess     </span> <span class="ansi-white-fg">Worker spawned with PID 29311</span>
+<span class="ansi-blue-fg">2019-12-05 20:45:20,174</span> <span class="ansi-black-intense-fg">DEBUG     </span> debug        29311    <span class="ansi-green-fg">Process-1       </span> <span class="ansi-white-fg">
                              0  1  2  3  4
-2019-12-05 15:07:37.431592  5  3  4  0  1
-2019-12-05 15:07:37.764925  3  5  0  0  1
-2019-12-05 15:07:38.098258  4  5  4  1  2</span>
-<span class="ansi-blue-fg">2019-12-05 15:07:38,455</span> <span class="ansi-black-intense-fg">DEBUG     </span> debug        22753    <span class="ansi-green-fg">Process-1       </span> <span class="ansi-white-fg">
+2019-12-05 20:45:19.167145  5  3  4  0  1
+2019-12-05 20:45:19.500478  3  5  0  0  1
+2019-12-05 20:45:19.833811  4  5  4  1  2</span>
+<span class="ansi-blue-fg">2019-12-05 20:45:20,197</span> <span class="ansi-black-intense-fg">DEBUG     </span> debug        29311    <span class="ansi-green-fg">Process-1       </span> <span class="ansi-white-fg">
                              0  1  2  3  4
-2019-12-05 15:07:37.431592  6  4  5  1  2
-2019-12-05 15:07:37.764925  4  6  1  1  2
-2019-12-05 15:07:38.098258  5  6  5  2  3</span>
-<span class="ansi-blue-fg">2019-12-05 15:07:39,438</span> <span class="ansi-black-intense-fg">DEBUG     </span> debug        22753    <span class="ansi-green-fg">Process-1       </span> <span class="ansi-white-fg">
+2019-12-05 20:45:19.167145  6  4  5  1  2
+2019-12-05 20:45:19.500478  4  6  1  1  2
+2019-12-05 20:45:19.833811  5  6  5  2  3</span>
+<span class="ansi-blue-fg">2019-12-05 20:45:21,176</span> <span class="ansi-black-intense-fg">DEBUG     </span> debug        29311    <span class="ansi-green-fg">Process-1       </span> <span class="ansi-white-fg">
                              0  1  2  3  4
-2019-12-05 15:07:38.432195  4  5  2  4  3
-2019-12-05 15:07:38.532195  4  2  4  5  2
-2019-12-05 15:07:38.632195  4  1  1  0  5
-2019-12-05 15:07:38.732195  1  1  5  1  1
-2019-12-05 15:07:38.832195  0  4  1  0  0
-2019-12-05 15:07:38.932195  5  3  2  1  0
-2019-12-05 15:07:39.032195  3  5  1  1  3
-2019-12-05 15:07:39.132195  4  0  1  3  4
-2019-12-05 15:07:39.232195  2  4  0  5  3
-2019-12-05 15:07:39.332195  1  2  0  4  1</span>
-<span class="ansi-blue-fg">2019-12-05 15:07:39,445</span> <span class="ansi-black-intense-fg">DEBUG     </span> debug        22753    <span class="ansi-green-fg">Process-1       </span> <span class="ansi-white-fg">
+2019-12-05 20:45:20.168067  4  5  2  4  3
+2019-12-05 20:45:20.268067  4  2  4  5  2
+2019-12-05 20:45:20.368067  4  1  1  0  5
+2019-12-05 20:45:20.468067  1  1  5  1  1
+2019-12-05 20:45:20.568067  0  4  1  0  0
+2019-12-05 20:45:20.668067  5  3  2  1  0
+2019-12-05 20:45:20.768067  3  5  1  1  3
+2019-12-05 20:45:20.868067  4  0  1  3  4
+2019-12-05 20:45:20.968067  2  4  0  5  3
+2019-12-05 20:45:21.068067  1  2  0  4  1</span>
+<span class="ansi-blue-fg">2019-12-05 20:45:21,184</span> <span class="ansi-black-intense-fg">DEBUG     </span> debug        29311    <span class="ansi-green-fg">Process-1       </span> <span class="ansi-white-fg">
                              0  1  2  3  4
-2019-12-05 15:07:38.432195  5  6  3  5  4
-2019-12-05 15:07:38.532195  5  3  5  6  3
-2019-12-05 15:07:38.632195  5  2  2  1  6
-2019-12-05 15:07:38.732195  2  2  6  2  2
-2019-12-05 15:07:38.832195  1  5  2  1  1
-2019-12-05 15:07:38.932195  6  4  3  2  1
-2019-12-05 15:07:39.032195  4  6  2  2  4
-2019-12-05 15:07:39.132195  5  1  2  4  5
-2019-12-05 15:07:39.232195  3  5  1  6  4
-2019-12-05 15:07:39.332195  2  3  1  5  2</span>
-<span class="ansi-blue-fg">2019-12-05 15:07:40,440</span> <span class="ansi-black-intense-fg">DEBUG     </span> debug        22753    <span class="ansi-green-fg">Process-1       </span> <span class="ansi-white-fg">
+2019-12-05 20:45:20.168067  5  6  3  5  4
+2019-12-05 20:45:20.268067  5  3  5  6  3
+2019-12-05 20:45:20.368067  5  2  2  1  6
+2019-12-05 20:45:20.468067  2  2  6  2  2
+2019-12-05 20:45:20.568067  1  5  2  1  1
+2019-12-05 20:45:20.668067  6  4  3  2  1
+2019-12-05 20:45:20.768067  4  6  2  2  4
+2019-12-05 20:45:20.868067  5  1  2  4  5
+2019-12-05 20:45:20.968067  3  5  1  6  4
+2019-12-05 20:45:21.068067  2  3  1  5  2</span>
+<span class="ansi-blue-fg">2019-12-05 20:45:22,176</span> <span class="ansi-black-intense-fg">DEBUG     </span> debug        29311    <span class="ansi-green-fg">Process-1       </span> <span class="ansi-white-fg">
                              0  1  2  3  4
-2019-12-05 15:07:39.433259  2  2  1  0  1
-2019-12-05 15:07:39.933259  3  5  4  3  5</span>
-<span class="ansi-blue-fg">2019-12-05 15:07:40,447</span> <span class="ansi-black-intense-fg">DEBUG     </span> debug        22753    <span class="ansi-green-fg">Process-1       </span> <span class="ansi-white-fg">
+2019-12-05 20:45:21.168726  2  2  1  0  1
+2019-12-05 20:45:21.668726  3  5  4  3  5</span>
+<span class="ansi-blue-fg">2019-12-05 20:45:22,184</span> <span class="ansi-black-intense-fg">DEBUG     </span> debug        29311    <span class="ansi-green-fg">Process-1       </span> <span class="ansi-white-fg">
                              0  1  2  3  4
-2019-12-05 15:07:39.433259  3  3  2  1  2
-2019-12-05 15:07:39.933259  4  6  5  4  6</span>
-<span class="ansi-blue-fg">2019-12-05 15:07:41,440</span> <span class="ansi-black-intense-fg">DEBUG     </span> debug        22753    <span class="ansi-green-fg">Process-1       </span> <span class="ansi-white-fg">
+2019-12-05 20:45:21.168726  3  3  2  1  2
+2019-12-05 20:45:21.668726  4  6  5  4  6</span>
+<span class="ansi-blue-fg">2019-12-05 20:45:23,176</span> <span class="ansi-black-intense-fg">DEBUG     </span> debug        29311    <span class="ansi-green-fg">Process-1       </span> <span class="ansi-white-fg">
                              0  1  2  3  4
-2019-12-05 15:07:40.433337  1  3  0  0  2
-2019-12-05 15:07:40.633337  2  1  3  4  2
-2019-12-05 15:07:40.833337  0  0  1  1  5
-2019-12-05 15:07:41.033337  3  0  0  5  5
-2019-12-05 15:07:41.233337  4  5  2  4  3</span>
-<span class="ansi-blue-fg">2019-12-05 15:07:41,447</span> <span class="ansi-black-intense-fg">DEBUG     </span> debug        22753    <span class="ansi-green-fg">Process-1       </span> <span class="ansi-white-fg">
+2019-12-05 20:45:22.168938  1  3  0  0  2
+2019-12-05 20:45:22.368938  2  1  3  4  2
+2019-12-05 20:45:22.568938  0  0  1  1  5
+2019-12-05 20:45:22.768938  3  0  0  5  5
+2019-12-05 20:45:22.968938  4  5  2  4  3</span>
+<span class="ansi-blue-fg">2019-12-05 20:45:23,184</span> <span class="ansi-black-intense-fg">DEBUG     </span> debug        29311    <span class="ansi-green-fg">Process-1       </span> <span class="ansi-white-fg">
                              0  1  2  3  4
-2019-12-05 15:07:40.433337  2  4  1  1  3
-2019-12-05 15:07:40.633337  3  2  4  5  3
-2019-12-05 15:07:40.833337  1  1  2  2  6
-2019-12-05 15:07:41.033337  4  1  1  6  6
-2019-12-05 15:07:41.233337  5  6  3  5  4</span>
+2019-12-05 20:45:22.168938  2  4  1  1  3
+2019-12-05 20:45:22.368938  3  2  4  5  3
+2019-12-05 20:45:22.568938  1  1  2  2  6
+2019-12-05 20:45:22.768938  4  1  1  6  6
+2019-12-05 20:45:22.968938  5  6  3  5  4</span>
+<span class="ansi-blue-fg">2019-12-05 20:45:24,176</span> <span class="ansi-black-intense-fg">DEBUG     </span> debug        29311    <span class="ansi-green-fg">Process-1       </span> <span class="ansi-white-fg">
+                             0  1  2  3  4
+2019-12-05 20:45:23.169141  5  3  5  0  3
+2019-12-05 20:45:23.669141  4  3  4  4  5</span>
+<span class="ansi-blue-fg">2019-12-05 20:45:24,184</span> <span class="ansi-black-intense-fg">DEBUG     </span> debug        29311    <span class="ansi-green-fg">Process-1       </span> <span class="ansi-white-fg">
+                             0  1  2  3  4
+2019-12-05 20:45:23.169141  6  4  6  1  4
+2019-12-05 20:45:23.669141  5  4  5  5  6</span>
 ^C
-<span class="ansi-blue-fg">2019-12-05 15:07:41,603</span> <span class="ansi-black-intense-fg">INFO      </span> manager      22746    <span class="ansi-green-fg">MainProcess     </span> <span class="ansi-cyan-fg">Interrupting</span>
-<span class="ansi-blue-fg">2019-12-05 15:07:41,602</span> <span class="ansi-black-intense-fg">DEBUG     </span> worker       22753    <span class="ansi-green-fg">Process-1       </span> <span class="ansi-white-fg">Interrupting</span>
-<span class="ansi-blue-fg">2019-12-05 15:07:41,603</span> <span class="ansi-black-intense-fg">INFO      </span> worker       22753    <span class="ansi-green-fg">Process-1       </span> <span class="ansi-cyan-fg">Terminating</span>
-<span class="ansi-blue-fg">2019-12-05 15:07:41,707</span> <span class="ansi-black-intense-fg">INFO      </span> timeflux     22746    <span class="ansi-green-fg">MainProcess     </span> <span class="ansi-cyan-fg">Terminated</span>
+<span class="ansi-blue-fg">2019-12-05 20:45:24,311</span> <span class="ansi-black-intense-fg">INFO      </span> manager      29309    <span class="ansi-green-fg">MainProcess     </span> <span class="ansi-cyan-fg">Interrupting</span>
+<span class="ansi-blue-fg">2019-12-05 20:45:24,310</span> <span class="ansi-black-intense-fg">DEBUG     </span> worker       29311    <span class="ansi-green-fg">Process-1       </span> <span class="ansi-white-fg">Interrupting</span>
+<span class="ansi-blue-fg">2019-12-05 20:45:24,311</span> <span class="ansi-black-intense-fg">INFO      </span> worker       29311    <span class="ansi-green-fg">Process-1       </span> <span class="ansi-cyan-fg">Terminating</span>
+<span class="ansi-blue-fg">2019-12-05 20:45:24,415</span> <span class="ansi-black-intense-fg">INFO      </span> timeflux     29309    <span class="ansi-green-fg">MainProcess     </span> <span class="ansi-cyan-fg">Terminated</span>
 </pre>
 </div>
 </div>
@@ -16577,7 +16585,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">timeflux.core.registry</span> <span class="k">import</span> <span class="n">Registry</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">timeflux.core.registry</span> <span class="kn">import</span> <span class="n">Registry</span>
 <span class="n">Registry</span><span class="o">.</span><span class="n">cycle_start</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">Registry</span><span class="o">.</span><span class="n">rate</span> <span class="o">=</span> <span class="mi">1</span>
 
