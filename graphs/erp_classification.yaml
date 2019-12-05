@@ -1,0 +1,133 @@
+graphs:
+  - id: Process
+    nodes:
+      - id: sub
+        module: timeflux.nodes.zmq
+        class: Sub
+        params:
+          topics: [raw_eeg, oddball_events]
+
+      - id: dejitter
+        module: timeflux.nodes.dejitter
+        class: Interpolate
+        params:
+          rate: 250
+          method: nearest
+
+      - id: line
+        module: timeflux_dsp.nodes.filters
+        class: IIRLineFilter
+        params:
+          rate: 250
+          edges_center: [50, 100]
+
+      - id: bandpass
+        module: timeflux_dsp.nodes.filters
+        class: IIRFilter
+        params:
+          rate: 250
+          frequencies: [1, 30]
+          filter_type: bandpass
+          order: 3
+
+      - id: epochs
+        module: timeflux.nodes.epoch
+        class: Epoch
+        params:
+          before: 0.0
+          after: 0.6
+          event_trigger: stim_on
+
+      - id: to_xarray
+        module: timeflux.nodes.epoch
+        class: ToXArray
+        params:
+          output: DataArray
+          context_key: deviant
+
+      - id: gate_training
+        module: timeflux.nodes.gate
+        class: Gate
+        params:
+          event_opens: training_begins
+          event_closes: training_ends
+
+      - id: append_epochs
+        module: timeflux.nodes.accumulate
+        class: AppendDataArray
+        params:
+          dim: target
+          meta_keys: [epochs_context, epochs_onset]
+
+      - id: reshape_epochs
+        module: timeflux.nodes.xarray
+        class: Transpose
+        params:
+          dims: [target, space, time]
+
+      - id: fit
+        module: timeflux_ml.nodes.fit
+        class: Fit
+        params:
+          pipeline_steps:
+            cov: pyriemann.estimation.ERPCovariances
+            proj: pyriemann.tangentspace.TangentSpace
+            clf: pyriemann.classification.LogisticRegression
+          pipeline_params:
+            cov__estimator: oas
+            proj__metric: riemann
+            clf__solver: lbfgs
+
+      - id: cv
+        module: timeflux_ml.nodes.cross_validate
+        class: CrossValidate
+        params:
+          pipeline_steps:
+            cov: pyriemann.estimation.ERPCovariances
+            proj: pyriemann.tangentspace.TangentSpace
+            clf: pyriemann.classification.LogisticRegression
+          pipeline_params:
+            cov__estimator: oas
+            proj__metric: riemann
+            clf__solver: lbfgs
+
+      - id: predict
+        module: timeflux_ml.nodes.predict
+        class: PredictProba
+
+      - id: display
+        module: timeflux.nodes.debug
+        class: Display
+    edges:
+      - source: sub:raw_eeg
+        target: dejitter
+      - source: dejitter
+        target: line
+      - source: line
+        target: bandpass
+      - source: bandpass
+        target: epochs
+      - source: sub:oddball_events
+        target: epochs:events
+      - source: epochs:*
+        target: to_xarray
+      - source: to_xarray
+        target: reshape_epochs
+      - source: reshape_epochs
+        target: gate_training
+      - source: sub:oddball_events
+        target: gate_training:events
+      - source: gate_training
+        target: append_epochs
+      - source: append_epochs
+        target: fit
+      - source: append_epochs
+        target: cv
+
+      - source: fit:model
+        target: predict:model
+      - source: reshape_epochs
+        target: predict
+
+
+
