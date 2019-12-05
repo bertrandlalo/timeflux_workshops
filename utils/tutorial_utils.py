@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
-"""EEG utilities
-    Created on december 2018
-    @authors: Raphaëlle Bertrand-Lalo, David Ojeda
-
-    Module containing utils functions to load, convert, process and plot EEG data.
+"""Workshop utilities
+    Created on december 2019
+    Module containing utils functions for the workshop
 """
 
 import logging
@@ -13,10 +11,6 @@ logger.setLevel(logging.CRITICAL)
 
 logging.getLogger("matplotlib").setLevel(logging.WARNING)
 
-import matplotlib.pyplot as plt
-import mne
-import seaborn as sns
-import numpy as np
 import pandas as pd
 
 import yaml
@@ -58,7 +52,7 @@ def estimate_rate(data):
 
 
 def load_standalone_graph(path):
-    # Load a graph
+    # Load a graph for offline usage
     with open(path, 'r') as stream:
         try:
             graph = yaml.safe_load(stream)['graphs'][0]
@@ -118,11 +112,8 @@ def pandas_to_mne(data, events=None, montage_kind='standard_1005', unit_factor=1
             trig[ix_tr] = event_id[events_labels[ii]]
 
         X = np.c_[X, trig]
-    else:
-        event_id = None
 
     info = mne.create_info(ch_names=ch_names, ch_types=ch_types, sfreq=sfreq, montage=montage)
     info["bads"] = bad_ch
     raw = mne.io.RawArray(data=X.T, info=info, verbose=False)
-    picks = mne.pick_channels(raw.ch_names, include=[], exclude=["stim"] + bad_ch)
     return raw

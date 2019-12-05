@@ -1,4 +1,3 @@
-import inspect
 from IPython.display import display_html, HTML
 from pygments.formatters import HtmlFormatter
 from pygments import lexers, highlight
