@@ -1,4 +1,4 @@
-name: timeflux-turorials
+name: timeflux-tutorials
 channels:
   - defaults
   - conda-forge
