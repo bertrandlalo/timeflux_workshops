@@ -57,4 +57,4 @@ graphs:
         target: ui:sumed
       - source: lowpass
         target: ui:lowpassed
-    rate: 100
+    rate: 32
